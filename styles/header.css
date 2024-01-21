@@ -1,0 +1,233 @@
+.cabecalho{
+    background-color: var(--branco);   
+    display: flex;
+    justify-content: space-between;/*da um espaçamento entre os itens*/
+    align-items: center;
+    position: relative;
+}
+
+.cabecalho__menu-hamburguer{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;/*não repete a imagem*/
+    background-position: center;/*centraliza a imagem*/
+    display: inline-block;/*usado para permitir modifique a altura e a largura*/
+}
+
+.container__botao:checked~.container__rotulo>.cabecalho__menu-hamburguer{
+    /*sinal de > procura um elemento que está dentro do elemento .container__rotulo envolve 
+    .cabecalho__menu-hamburguer */
+    background-image: url("../img/Frame\ 20.svg");
+}
+
+.container__botao:checked~.container__rotulo{
+    background: var(--azul-degrade) ;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    /* justify-content: center;
+    gap: 0.5rem; */
+}
+
+.container__categoria{
+    display: none;
+    text-decoration: none;
+    display: none;
+    text-decoration: none;
+    color: var(--azul);
+    font-family: var(--fonte-principal);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.container__favoritos{
+    display: none;
+    text-decoration: none;
+    display: none;
+    text-decoration: none;
+    color: var(--azul);
+    font-family: var(--fonte-principal);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.container__minha-estante{
+    display: none;
+    text-decoration: none;
+    display: none;
+    text-decoration: none;
+    color: var(--azul);
+    font-family: var(--fonte-principal);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.container__botao{
+    display: none;
+    text-decoration: none;
+    
+}
+
+.container__imagem{
+    padding: 0.65em;
+}
+
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vh;
+}
+
+.container__botao:checked~.lista-menu{/*Se ele tiver selecionado ele vai pegar o elemento mais proximo dele
+    no caso .lista-menu e vai por o display como block*/
+    display: block;
+}
+
+.lista-menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link{
+    color: var(--azul-degrade);
+    text-decoration: none; 
+    /* -webkit-background-clip: text ;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; */
+    text-transform: uppercase;/*deixa a letra maiuscula*/
+}
+
+.lista-menu__titulo, .lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+/*tirar o que não existe na versão mobile*/
+.container__titulo,
+.container__titulo__negrito,
+.opcoes, 
+.container__botao2,
+.lista-menu-tablet,
+.link-menu-table
+.container__descricao,
+.container__descricao{
+    display: none;
+}
+
+/*design para tablet*/
+@media screen and (min-width: 1024px) {
+
+    .container__titulo,
+    .container__titulo__negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px ;
+    }
+
+    .container__titulo{
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo__negrito{
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    
+
+    .opcoes__item{
+        text-transform: uppercase;
+    }
+
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--azul);
+    }
+
+    .container{
+        gap: 1rem;
+    }
+
+    .cabecalho__menu-hamburguer,
+    .meus-favoritos,
+    #opcoes-menu{
+        display: none;
+    }
+
+    .opcoes__botao:checked~.lista-menu{/*Se ele tiver selecionado ele vai pegar o elemento mais proximo dele
+        no caso .lista-menu e vai por o display como block*/
+         display: block;
+         width: auto;
+         left: 20%;
+    }
+
+    .opcoes__item{
+        padding: 2em 1em;
+    }
+
+    .opcoes__botao:checked~.opcoes__rotulo>.opcoes__item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .lista-menu__link:hover{
+        color: var(--azul-hover);
+        
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link{
+        color: var(--branco);
+    }
+
+
+
+}
+
+@media screen and (min-width: 1728px) {
+    
+    .container__link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .container__descricao{
+        display: block;
+        font-size: 20px;
+        text-decoration: none;
+        color: var(--preto);
+        margin: auto 0;
+    }
+
+
+    .container__imagem{
+        padding: 0;
+        
+    }
+
+    .cabecalho{
+        padding: 0 2em;
+    }
+
+    .opcoes{
+        margin-right: auto ;
+    } 
+
+   
+
+}
